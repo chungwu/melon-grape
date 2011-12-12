@@ -44,7 +44,7 @@ function Crane() {
     if (self.hoverTimeoutId) {
       clearTimeout(self.hoverTimeoutId);
     }
-    self.hoverTimeoutId = setTimeout(function() { console.log("Timeout!"); self.setEmotion(crane.EMOTION_NORMAL); }, 500);
+    self.hoverTimeoutId = setTimeout(function() { console.log("Timeout!"); self.setEmotion(crane.EMOTION_NORMAL); }, 1000);
   }
   this.hoverable.mouseenter(onMouseOver).mouseleave(onMouseOut);
 }
@@ -124,15 +124,6 @@ Crane.prototype.setEmotion = function(emotion) {
 Crane.prototype.animate = function() {
   this.animating = true;
   this._animateFrame();
-};
-
-Crane.prototype._rushFrame = function() {
-  if (this.timeoutId) {
-    clearTimeout(this.timeoutId);
-  }
-  var self = this;
-  function frame() { self._animateFrame();}
-  this.timeoutId = setTimeout(frame, 100);
 };
 
 Crane.prototype._animateFrame = function() {
