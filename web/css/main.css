@@ -1,0 +1,15 @@
+html,body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 10pt;
+}
+
+img.crane {
+  display: none;
+  position: absolute;
+}
+.crane-hoverable {
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  z-index: 10;
+}
