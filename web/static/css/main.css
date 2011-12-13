@@ -1,8 +1,12 @@
 html,body {
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 10pt;
+  font-size: 14px;
   margin: 0;
   padding: 0;
+}
+
+h1, h2 {
+  margin: 0; padding: 0;
 }
 
 img.crane {
@@ -14,4 +18,48 @@ img.crane {
   width: 65px;
   height: 65px;
   z-index: 10;
+}
+
+/* Pages */
+.pages-container {
+  width: 1020px;
+  position: relative;
+}
+
+.page {
+  border: 1px solid #ddd;
+  width: 820px;
+  min-height: 300px;
+  position: absolute;
+  top: 10px;
+  left: 150px;
+  padding: 25px;
+  box-shadow: 4px 4px 8px #888;
+  background-color: #eee;
+  -webkit-transform-origin: 0 0;
+}
+
+.page-menu {
+  -webkit-transform: translate(-30px, 50px) rotate(135deg);
+}
+
+.page-title {
+  font-size: 50px;
+  font-family: "Courier New";
+  text-align: right;
+  margin-bottom: 25px;
+}
+
+.page-title-tag {
+  font-size: 16px;
+  font-family: "Courier New";
+  -webkit-transform: rotate(-135deg);
+  display: inline-block;
+  text-align: center;
+  position: absolute;
+  left: 10px;
+}
+
+.page-content {
+  
 }
