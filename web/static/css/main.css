@@ -32,11 +32,14 @@ img.crane {
   padding: 0;
   background-color: #eee;
   -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
 }
 
 .page-closed {
   -webkit-transform: translate(110px, 50px) rotate(135deg);
+  -moz-transform: translate(110px, 50px) rotate(135deg);
   -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
   box-shadow: 4px -4px 8px #888, 0 10px 8px #888;
   cursor: pointer;
 }
@@ -57,7 +60,9 @@ img.crane {
 
 .page-opened {
   -webkit-transform: translate(0) rotate(0deg);
+  -moz-transform: translate(0) rotate(0deg);
   -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
   box-shadow: 4px 4px 8px #888;
   top: 10px;
   left: 120px;
@@ -73,18 +78,29 @@ img.crane {
   font-size: 16px;
   font-family: "Courier New";
   -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
   display: inline-block;
   text-align: center;
   position: absolute;
   width: 70px;
   top: 35px;
   left: 5px;
+  z-index: 2;
+}
+
+.page-header-container {
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000px;
 }
 
 .page-header {
   box-shadow: 2px 2px 8px #888;
   padding: 50px;
   z-index: 10;
+  -webkit-transform: rotate3d(1, 0, 0, 5deg);
+  -webkit-transform-origin: 0 0;
+  -moz-transform: rotate3d(1, 0, 0, 5deg);
+  -moz-transform-origin: 0 0;
 }
 
 .page-content {
