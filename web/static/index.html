@@ -12,16 +12,64 @@
 
 <div class="pages-container">
 
-  <div class="page page-menu">
+  <div class="page page-settings page-opened">
     <h2 class="page-title-tag">The<br/>Setting</h2>
-    <h1 class="page-title">The Setting</h1>
-    Lorem ipsum
+    <div class="page-header">
+      <h1 class="page-title">The Setting</h1>
+    </div>
+    <div class="page-content">
+      Lorem ipsum
+    </div>
   </div>
 
-  <div class="page">
+  <div class="page page-closed page-plot">
     <h2 class="page-title-tag">The<br/>Plot</h2>
-    <h1 class="page-title">The Plot</h1>
-    Lorem ipsum
+    <div class="page-header">
+      <h1 class="page-title">The Plot</h1>
+    </div>
+    <div class="page-content">
+      Lorem ipsum
+    </div>
+  </div>
+
+  <div class="page page-closed page-cast">
+    <h2 class="page-title-tag">The<br/>Cast</h2>
+    <div class="page-header">
+      <h1 class="page-title">The Cast</h1>
+    </div>
+    <div class="page-content">
+      Lorem ipsum
+    </div>
+  </div>
+
+  <div class="page page-closed page-trailer">
+    <h2 class="page-title-tag">Trailer</h2>
+    <div class="page-header">
+      <h1 class="page-title">Trailer</h1>
+    </div>
+    <div class="page-content">
+      Lorem ipsum
+    </div>
+  </div>
+
+  <div class="page page-closed page-rsvp">
+    <h2 class="page-title-tag">RSVP<br/>Tickets</h2>
+    <div class="page-header">
+      <h1 class="page-title">RSVP Tickets</h1>
+    </div>
+    <div class="page-content">
+      Lorem ipsum
+    </div>
+  </div>
+
+  <div class="page page-closed page-extras">
+    <h2 class="page-title-tag">Extras</h2>
+    <div class="page-header">
+      <h1 class="page-title">Extras</h1>
+    </div>
+    <div class="page-content">
+      Lorem ipsum
+    </div>
   </div>
 
 </div>
@@ -32,6 +80,11 @@ $(function() {
   cr1 = new Crane();
   cr2 = new Crane();
   cr1.animate(); cr2.animate();
+
+  $(".page").click(function() {
+    $(".page-opened").removeClass("page-opened").addClass("page-closed");
+    $(this).addClass("page-opened").removeClass("page-closed");
+  });
 });
 </script>
 
