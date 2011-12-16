@@ -20,6 +20,10 @@ img.crane {
   z-index: 10;
 }
 
+.video {
+  text-align: center;
+}
+
 /* Pages */
 .pages-container {
   width: 1020px;
@@ -40,8 +44,12 @@ img.crane {
   -moz-transform: translate(110px, 50px) rotate(135deg);
   -webkit-transition-duration: 0.5s;
   -moz-transition-duration: 0.5s;
-  box-shadow: 4px -4px 8px #888, 0 10px 8px #888;
+  box-shadow: 4px -4px 8px #888, -2px -2px 8px #888;
   cursor: pointer;
+}
+
+.page-closed:hover {
+  -webkit-transform: translate(150px, 50px) rotate(135deg);
 }
 
 .page-settings .page-header { background-image: url('../images/paper1.jpg');}
@@ -66,6 +74,7 @@ img.crane {
   box-shadow: 4px 4px 8px #888;
   top: 10px;
   left: 120px;
+  z-index: -1;
 }
 
 .page-title {
