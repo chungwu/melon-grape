@@ -5,6 +5,22 @@ html,body {
   padding: 0;
 }
 
+body {
+  padding-bottom: 30px;
+  background-image: url('../images/wood.jpg');
+  background-repeat: repeat;
+}
+
+.main {
+  box-shadow: 2px 2px 8px #222;
+  width: 940px;
+  padding-bottom: 30px;
+  background-image: url('../images/sand.jpg');
+  background-repeat: repeat;
+  margin-left: 25px;
+  margin-top: 10px;
+}
+
 h1, h2 {
   margin: 0; padding: 0;
 }
@@ -24,32 +40,97 @@ img.crane {
   text-align: center;
 }
 
+.header {
+  position: relative;
+  margin-top: 30px;
+}
+.header img {
+  display: block;
+}
+.header .prop {
+  position: absolute;
+}
+.header .sun {
+  left: 300px; 
+  top: -15px;
+}
+.header .sun-start {
+  -webkit-transform: rotate(-5deg);
+  -webkit-transition-duration: 20s;
+}
+.header .sun-end {
+  -webkit-transform: rotate(5deg);
+  -webkit-transition-duration: 15s;
+}
+.header .wave {
+  top: 10px;
+  left: 0px;
+  -webkit-transform-origin: 0 100%;
+}
+.header .wave-start {
+  -webkit-transform: translate(-5px, -5px) rotate(-5deg);
+  -webkit-transition-duration: 10s;
+}
+.header .wave-end {
+  -webkit-transform: translate(15px, 5px) rotate(5deg);
+  -webkit-transition-duration: 10s;
+}
+.header .leaf1 {
+  top: 5px;
+  left: 720px;
+}
+.header .leaf2 {
+  top: -10px;
+  left: 760px;
+}
+.header .leaf3 {
+  top: 10px;
+  left: 815px;
+}
+
+.header .leaf-start {
+  -webkit-transform: rotate(-5deg);
+  -webkit-transition-duration: 10s;
+}
+
+.header .leaf-end {
+  -webkit-transform: rotate(5deg);
+  -webkit-transition-duration: 10s;
+}
+
+.header .cloud1 {
+  top: 10px;
+  left: 100px;
+}
+.header .cloud2 {
+  top: 10px;
+  left: 500px;
+}
+
 /* Pages */
 .pages-container {
-  width: 1020px;
+  width: 980px;
+  height: 1000px;
   position: relative;
+  margin-top: -25px;
 }
 
 .page {
-  width: 890px;
+  width: 850px;
   position: absolute;
   padding: 0;
   background-color: #eee;
-  -webkit-transform-origin: 0 0;
-  -moz-transform-origin: 0 0;
+  -webkit-transform-origin: 100% 0;
+  -moz-transform-origin: 100% 0;
+  z-index: 2;
 }
 
 .page-closed {
-  -webkit-transform: translate(110px, 50px) rotate(135deg);
-  -moz-transform: translate(110px, 50px) rotate(135deg);
   -webkit-transition-duration: 0.5s;
   -moz-transition-duration: 0.5s;
-  box-shadow: 4px -4px 8px #888, -2px -2px 8px #888;
+  box-shadow: -1px -1px 4px #444;
   cursor: pointer;
-}
-
-.page-closed:hover {
-  -webkit-transform: translate(150px, 50px) rotate(135deg);
+  left: -780px;
 }
 
 .page-settings .page-header { background-image: url('../images/paper1.jpg');}
@@ -59,41 +140,43 @@ img.crane {
 .page-rsvp .page-header { background-image: url('../images/paper6.jpg');}
 .page-extras .page-header { background-image: url('../images/paper7.jpg');}
 
-.page-closed.page-settings { top: -50px; }
-.page-closed.page-plot { top: 75px; }
-.page-closed.page-cast { top: 200px; }
-.page-closed.page-trailer { top: 325px; }
-.page-closed.page-rsvp { top: 450px; }
-.page-closed.page-extras { top: 575px; }
+.page-closed.page-settings { top: -50px; left:-760px;}
+.page-closed.page-plot { top: 0px; left:-770px;}
+.page-closed.page-cast { top: 50px; left:-775px;}
+.page-closed.page-trailer { top: 100px; left:-765px;}
+.page-closed.page-rsvp { top: 150px; left:-760px;}
+.page-closed.page-extras { top: 225px; left:-770px;}
+
+.page-closed:hover {
+  left: -740px;
+}
 
 .page-opened {
   -webkit-transform: translate(0) rotate(0deg);
   -moz-transform: translate(0) rotate(0deg);
   -webkit-transition-duration: 0.5s;
   -moz-transition-duration: 0.5s;
-  box-shadow: 4px 4px 8px #888;
+  box-shadow: 2px 2px 8px #444;
   top: 10px;
-  left: 120px;
-  z-index: -1;
+  left: 100px;
+  z-index: 0;
 }
 
 .page-title {
   font-size: 50px;
   font-family: "Coustard", "Courier New", serif;
-  text-align: right;
+  text-align: left;
 }
 
 .page-title-tag {
   font-size: 16px;
   font-family: "Coustard", "Courier New", serif;
-  -webkit-transform: rotate(-135deg);
-  -moz-transform: rotate(-135deg);
   display: inline-block;
   text-align: center;
+  vertical-align: middle;
   position: absolute;
-  width: 70px;
-  top: 35px;
-  left: 5px;
+  top: 15px;
+  right: 15px;
   z-index: 2;
   font-weight: normal;
 }
@@ -104,8 +187,8 @@ img.crane {
 }
 
 .page-header {
-  box-shadow: 2px 2px 8px #888;
-  padding: 50px;
+  box-shadow: 2px 2px 8px #444;
+  padding: 25px;
   z-index: 10;
   -webkit-transform: rotate3d(1, 0, 0, 5deg);
   -webkit-transform-origin: 0 0;

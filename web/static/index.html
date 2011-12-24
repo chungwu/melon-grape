@@ -4,17 +4,29 @@
 <link href='http://fonts.googleapis.com/css?family=Coustard:400,900' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="css/main.css"/>
 <script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/cranes.js"></script>
 </head>
 
 <body>
 
-<img src="images/header.png"/>
+<div class="main">
+
+<div class="header">
+  <img src="images/header.jpg"/>
+  <div class="prop cloud1"><img src="images/cloud1.png"/></div>
+  <div class="prop cloud2"><img src="images/cloud2.png"/></div>
+  <div class="prop sun"><img src="images/sun.png"/></div>
+  <div class="prop wave"><img src="images/wave.png"/></div>
+  <div class="prop leaf1"><img src="images/leaf1.png"/></div>
+  <div class="prop leaf2"><img src="images/leaf2.png"/></div>
+  <div class="prop leaf3"><img src="images/leaf3.png"/></div>
+</div>
 
 <div class="pages-container">
 
   <div class="page page-settings page-opened">
-    <h2 class="page-title-tag">The<br/>Setting</h2>
+    <h2 class="page-title-tag">The Setting</h2>
     <div class="page-header-container">
       <div class="page-header">
         <h1 class="page-title">The Setting</h1>
@@ -26,7 +38,7 @@
   </div>
 
   <div class="page page-closed page-plot">
-    <h2 class="page-title-tag">The<br/>Plot</h2>
+    <h2 class="page-title-tag">The Plot</h2>
     <div class="page-header-container">
       <div class="page-header">
         <h1 class="page-title">The Plot</h1>
@@ -38,7 +50,7 @@
   </div>
 
   <div class="page page-closed page-cast">
-    <h2 class="page-title-tag">The<br/>Cast</h2>
+    <h2 class="page-title-tag">The Cast</h2>
     <div class="page-header-container">
       <div class="page-header">
         <h1 class="page-title">The Cast</h1>
@@ -89,6 +101,8 @@
 
 </div>
 
+</div>
+
 <script type="text/javascript">
 var cr1, cr2;
 $(function() {
@@ -100,6 +114,14 @@ $(function() {
     $(".page-opened").removeClass("page-opened").addClass("page-closed");
     $(this).addClass("page-opened").removeClass("page-closed");
   });
+
+  animateStraight(".header .cloud1", 1000000, {left: "-100px"}, {left: "1000px"}, "linear");
+  animateStraight(".header .cloud2", 1000000, {left: "1000px"}, {left: "-100px"}, "linear");
+  animateClasses(".header .sun", 15000, "sun-start", "sun-end");
+  animateClasses(".header .wave", 10000, "wave-start", "wave-end");
+  animateClasses(".header .leaf1", 8000, "leaf-start", "leaf-end");
+  animateClasses(".header .leaf2", 10000, "leaf-end", "leaf-start");
+  animateClasses(".header .leaf3", 13000, "leaf-start", "leaf-end");
 });
 </script>
 
