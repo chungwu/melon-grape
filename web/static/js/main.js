@@ -38,3 +38,9 @@ function animateClasses(selector, duration, startClass, endClass) {
   }
   animate(startClass, endClass);
 }
+
+function openPage($page) {
+  $(".page-opened").removeClass("page-opened").addClass("page-closed");
+  $page.addClass("page-opened").removeClass("page-closed");
+  $(".pages-container").css("height", $page.outerHeight() + "px");  
+}

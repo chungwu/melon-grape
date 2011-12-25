@@ -25,7 +25,19 @@
 
 <div class="pages-container">
 
-  <div class="page page-settings page-opened">
+  <div class="page page-home page-closed">
+    <h2 class="page-title-tag">Home</h2>
+    <div class="page-header-container">
+      <div class="page-header">
+        <h1 class="page-title">Welcome!</h1>
+      </div>
+    </div>
+    <div class="page-content">
+      Lorem ipsum
+    </div>
+  </div>
+
+  <div class="page page-settings page-closed">
     <h2 class="page-title-tag">The Setting</h2>
     <div class="page-header-container">
       <div class="page-header">
@@ -111,17 +123,17 @@ $(function() {
   cr1.animate(); cr2.animate();
 
   $(".page").click(function() {
-    $(".page-opened").removeClass("page-opened").addClass("page-closed");
-    $(this).addClass("page-opened").removeClass("page-closed");
+    openPage($(this));
   });
+  openPage($(".page-home"));
 
   animateStraight(".header .cloud1", 1000000, {left: "-100px"}, {left: "1000px"}, "linear");
   animateStraight(".header .cloud2", 1000000, {left: "1000px"}, {left: "-100px"}, "linear");
-  animateClasses(".header .sun", 15000, "sun-start", "sun-end");
+  animateClasses(".header .sun", 10000, "sun-start", "sun-end");
   animateClasses(".header .wave", 10000, "wave-start", "wave-end");
-  animateClasses(".header .leaf1", 8000, "leaf-start", "leaf-end");
-  animateClasses(".header .leaf2", 10000, "leaf-end", "leaf-start");
-  animateClasses(".header .leaf3", 13000, "leaf-start", "leaf-end");
+  animateClasses(".header .leaf1", 4000, "leaf-start", "leaf-end");
+  animateClasses(".header .leaf2", 5000, "leaf-end", "leaf-start");
+  animateClasses(".header .leaf3", 8000, "leaf-start", "leaf-end");
 });
 </script>
 
