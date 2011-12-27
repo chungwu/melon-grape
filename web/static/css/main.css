@@ -116,7 +116,7 @@ img.crane {
 
 /* Pages */
 .pages-container {
-  width: 980px;
+  width: 940px;
   height: 1000px;
   position: relative;
   margin-top: -15px;
@@ -222,4 +222,8 @@ img.crane {
 
 .stack .page-closed {
   cursor: default;
+}
+
+.stack .page-content {
+  min-height: 100px;
 }

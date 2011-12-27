@@ -62,7 +62,7 @@ function fillStack() {
     var $page = $("<div/>").addClass("page page-closed").css(
       {
 	top: lastTop - 5 + Math.random() * 10 + "px",
-	left: -780 + Math.random()*20 + "px"
+	left: -790 + Math.random()*20 + "px"
       }).appendTo($stack);
     var $header = $("<div class='page-header'><div class='page-title'>&nbsp;</div></div>").appendTo($page);
     $header.css("backgroundImage", "url('" +  images[Math.floor(Math.random() * images.length)] + "')");
