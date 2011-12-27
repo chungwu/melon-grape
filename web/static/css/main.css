@@ -171,7 +171,7 @@ img.crane {
 .page-closed.page-rsvp { top: 200px; left:-768px;}
 .page-closed.page-extras { top: 275px; left:-770px;}
 
-.page-closed.page-openable:hover {
+.page-openable.page-closed.page-hovered {
   left: -740px;
 }
 
@@ -194,16 +194,19 @@ img.crane {
 }
 
 .page-title-tag {
+  color: #000;
+  text-decoration: none;
   font-size: 16px;
   font-family: "Coustard", "Courier New", serif;
   display: inline-block;
   text-align: center;
   vertical-align: middle;
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: -10px;
+  right: -5px;
   z-index: 2;
   font-weight: normal;
+  padding: 25px;
 }
 
 .page-header-container {

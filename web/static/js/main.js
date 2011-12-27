@@ -29,7 +29,6 @@ function animateStraight(selector, duration, startCss, endCss, opt_easing) {
 function animateClasses(selector, duration, startClass, endClass) {
   var $prop = $(selector);
   function animate(toAdd, toRemove) {
-    console.log("Animate " + toAdd + ", " + toRemove);
     $prop.removeClass(toRemove).addClass(toAdd);
     $prop.clearQueue().delay(duration).queue(
       function() {
@@ -37,6 +36,11 @@ function animateClasses(selector, duration, startClass, endClass) {
       });
   }
   animate(startClass, endClass);
+}
+
+function onHistoryChanged(opt_hash) {
+  var hash = opt_hash || "home";
+  openPage($(".page-" + hash));
 }
 
 function openPage($page) {

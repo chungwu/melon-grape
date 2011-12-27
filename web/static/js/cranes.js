@@ -107,16 +107,12 @@ Crane.prototype.setNewGoal = function(opt_x, opt_y) {
   } else {
     this.goalY = ($(window).height() - 100) * Math.random();
   }
-
-  console.log("Setting new goal! x: " + this.goalX + ", y: " + this.goalY);
 };
 
 Crane.prototype.setEmotion = function(emotion) {
-  console.log("Set emotion: " + emotion);
   var oldState = this.emotionState;
   this.emotionState = emotion;
   if (this.animating && oldState != this.emotionState) {
-    console.log("Request animmate");
     this._animateFrame();
   }
 };
