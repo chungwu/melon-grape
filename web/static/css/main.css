@@ -13,6 +13,7 @@ body {
 
 .main {
   box-shadow: 2px 2px 8px #222;
+  -moz-box-shadow: 2px 2px 8px #222;
   width: 940px;
   padding-bottom: 30px;
   margin-left: 25px;
@@ -64,23 +65,32 @@ img.crane {
 .header .sun-start {
   -webkit-transform: rotate(-5deg);
   -webkit-transition-duration: 10s;
+  -moz-transform: rotate(-5deg);
+  -moz-transition-duration: 10s;
 }
 .header .sun-end {
   -webkit-transform: rotate(5deg);
   -webkit-transition-duration: 10s;
+  -moz-transform: rotate(5deg);
+  -moz-transition-duration: 10s;
 }
 .header .wave {
   top: 10px;
   left: 0px;
   -webkit-transform-origin: 0 100%;
+  -moz-transform-origin: 0 100%;
 }
 .header .wave-start {
   -webkit-transform: translate(-5px, -5px) rotate(-5deg);
   -webkit-transition-duration: 10s;
+  -moz-transform: translate(-5px, -5px) rotate(-5deg);
+  -moz-transition-duration: 10s;
 }
 .header .wave-end {
   -webkit-transform: translate(15px, 5px) rotate(5deg);
   -webkit-transition-duration: 10s;
+  -moz-transform: translate(15px, 5px) rotate(5deg);
+  -moz-transition-duration: 10s;
 }
 .header .leaf1 {
   top: 5px;
@@ -98,11 +108,15 @@ img.crane {
 .header .leaf-start {
   -webkit-transform: rotate(-10deg);
   -webkit-transition-duration: 5s;
+  -moz-transform: rotate(-10deg);
+  -moz-transition-duration: 5s;
 }
 
 .header .leaf-end {
   -webkit-transform: rotate(10deg);
   -webkit-transition-duration: 5s;
+  -moz-transform: rotate(10deg);
+  -moz-transition-duration: 5s;
 }
 
 .header .cloud1 {
@@ -136,6 +150,7 @@ img.crane {
   -webkit-transition-duration: 0.5s;
   -moz-transition-duration: 0.5s;
   box-shadow: -1px -1px 4px #444;
+  -moz-box-shadow: -1px -1px 4px #444;
   cursor: pointer;
   left: -780px;
 }
@@ -166,6 +181,7 @@ img.crane {
   -webkit-transition-duration: 0.5s;
   -moz-transition-duration: 0.5s;
   box-shadow: 2px 2px 8px #444;
+  -moz-box-shadow: 2px 2px 8px #444;
   top: 10px;
   left: 100px;
   z-index: 0;
@@ -197,6 +213,7 @@ img.crane {
 
 .page-header {
   box-shadow: 2px 2px 8px #444;
+  -moz-box-shadow: 2px 2px 8px #444;
   padding: 25px;
   z-index: 10;
   -webkit-transform: rotate3d(1, 0, 0, 5deg);

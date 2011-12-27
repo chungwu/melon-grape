@@ -68,6 +68,6 @@ function fillStack() {
     $header.css("backgroundImage", "url('" +  images[Math.floor(Math.random() * images.length)] + "')");
     $header.css("backgroundPosition", "0px " + Math.random() * -600 + "px");
     $("<div class='page-content'/>").appendTo($page);
-    lastTop += 15;
+    lastTop += 25;
   }
 }

@@ -44,7 +44,7 @@ function Crane() {
     if (self.hoverTimeoutId) {
       clearTimeout(self.hoverTimeoutId);
     }
-    self.hoverTimeoutId = setTimeout(function() { console.log("Timeout!"); self.setEmotion(crane.EMOTION_NORMAL); }, 1000);
+    self.hoverTimeoutId = setTimeout(function() { self.setEmotion(crane.EMOTION_NORMAL); }, 1000);
   }
   this.hoverable.mouseenter(onMouseOver).mouseleave(onMouseOut);
 }
