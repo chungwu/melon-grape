@@ -13,7 +13,7 @@
 <div class="main">
 
 <div class="header">
-  <img src="images/header.jpg"/>
+  <img src="images/header.png"/>
   <div class="prop cloud1"><img src="images/cloud1.png"/></div>
   <div class="prop cloud2"><img src="images/cloud2.png"/></div>
   <div class="prop sun"><img src="images/sun.png"/></div>
@@ -23,9 +23,11 @@
   <div class="prop leaf3"><img src="images/leaf3.png"/></div>
 </div>
 
+<div class="sand-background"></div>
+
 <div class="pages-container">
 
-  <div class="page page-home page-closed">
+  <div class="page page-home page-closed page-openable">
     <h2 class="page-title-tag">Home</h2>
     <div class="page-header-container">
       <div class="page-header">
@@ -37,7 +39,7 @@
     </div>
   </div>
 
-  <div class="page page-settings page-closed">
+  <div class="page page-settings page-closed page-openable">
     <h2 class="page-title-tag">The Setting</h2>
     <div class="page-header-container">
       <div class="page-header">
@@ -49,7 +51,7 @@
     </div>
   </div>
 
-  <div class="page page-closed page-plot">
+  <div class="page page-closed page-plot page-openable">
     <h2 class="page-title-tag">The Plot</h2>
     <div class="page-header-container">
       <div class="page-header">
@@ -61,7 +63,7 @@
     </div>
   </div>
 
-  <div class="page page-closed page-cast">
+  <div class="page page-closed page-cast page-openable">
     <h2 class="page-title-tag">The Cast</h2>
     <div class="page-header-container">
       <div class="page-header">
@@ -73,7 +75,7 @@
     </div>
   </div>
 
-  <div class="page page-closed page-trailer">
+  <div class="page page-closed page-openable page-trailer">
     <h2 class="page-title-tag">Trailer</h2>
     <div class="page-header-container">
       <div class="page-header">
@@ -87,7 +89,7 @@
     </div>
   </div>
 
-  <div class="page page-closed page-rsvp">
+  <div class="page page-closed page-openable page-rsvp">
     <h2 class="page-title-tag">RSVP<br/>Tickets</h2>
     <div class="page-header-container">
       <div class="page-header">
@@ -99,7 +101,7 @@
     </div>
   </div>
 
-  <div class="page page-closed page-extras">
+  <div class="page page-closed page-openable page-extras">
     <h2 class="page-title-tag">Extras</h2>
     <div class="page-header-container">
       <div class="page-header">
@@ -111,8 +113,10 @@
     </div>
   </div>
 
-</div>
+  <div class="stack">
+  </div>
 
+</div>
 </div>
 
 <script type="text/javascript">
@@ -121,6 +125,8 @@ $(function() {
   cr1 = new Crane();
   cr2 = new Crane();
   cr1.animate(); cr2.animate();
+
+  fillStack();
 
   $(".page").click(function() {
     openPage($(this));

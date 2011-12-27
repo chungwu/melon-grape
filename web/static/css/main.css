@@ -15,10 +15,17 @@ body {
   box-shadow: 2px 2px 8px #222;
   width: 940px;
   padding-bottom: 30px;
-  background-image: url('../images/sand.jpg');
-  background-repeat: repeat;
   margin-left: 25px;
   margin-top: 10px;
+}
+
+.sand-background {
+  background-image: url('../images/sand.jpg');
+  background-repeat: repeat;
+  height: 1000px;
+  position: absolute;
+  width: 940px;
+  padding-bottom: 30px;
 }
 
 h1, h2 {
@@ -133,23 +140,23 @@ img.crane {
   left: -780px;
 }
 
-.page-home .page-header { background-image: url('../images/paper1.jpg');}
-.page-settings .page-header { background-image: url('../images/paper3.jpg');}
-.page-plot .page-header { background-image: url('../images/paper4.jpg');}
-.page-cast .page-header { background-image: url('../images/paper5.jpg');}
-.page-trailer .page-header { background-image: url('../images/paper6.jpg');}
-.page-rsvp .page-header { background-image: url('../images/paper7.jpg');}
-.page-extras .page-header { background-image: url('../images/paper2.jpg');}
+.page-home .page-header { background-image: url('../images/paper1b.jpg'); background-position: 0px -710px;}
+.page-settings .page-header { background-image: url('../images/paper3.jpg'); background-position: 0px -550px;}
+.page-plot .page-header { background-image: url('../images/paper4.jpg'); background-position: 0px -1000px;}
+.page-cast .page-header { background-image: url('../images/paper5.jpg'); background-position: 0px 0px;}
+.page-trailer .page-header { background-image: url('../images/paper6.jpg'); background-position: 0px -200px;}
+.page-rsvp .page-header { background-image: url('../images/paper7b.jpg'); background-position: 0px -630px;}
+.page-extras .page-header { background-image: url('../images/paper2.jpg'); background-position: 0px -280px;}
 
 .page-closed.page-home { top: -50px; left:-775px;}
-.page-closed.page-settings { top: 0px; left:-760px;}
+.page-closed.page-settings { top: 0px; left:-763px;}
 .page-closed.page-plot { top: 50px; left:-770px;}
 .page-closed.page-cast { top: 100px; left:-775px;}
-.page-closed.page-trailer { top: 150px; left:-765px;}
-.page-closed.page-rsvp { top: 200px; left:-760px;}
+.page-closed.page-trailer { top: 150px; left:-775px;}
+.page-closed.page-rsvp { top: 200px; left:-768px;}
 .page-closed.page-extras { top: 275px; left:-770px;}
 
-.page-closed:hover {
+.page-closed.page-openable:hover {
   left: -740px;
 }
 
@@ -203,4 +210,16 @@ img.crane {
   padding: 25px;
   border: 1px solid #ddd;
   border-top: 0;
+}
+
+.stack {
+  position: absolute;
+}
+
+.stack .page-header {
+  opacity: 0.4;
+}
+
+.stack .page-closed {
+  cursor: default;
 }
