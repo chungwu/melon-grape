@@ -130,10 +130,8 @@ $(function() {
   cr1.animate(); cr2.animate();
 
   $(".page-title-tag").mouseenter(function() {
-    console.log("ENTERED");
     $(this).parents(".page").addClass("page-hovered");
   }).mouseleave(function() {
-    console.log("LEFT");
     $(this).parents(".page").removeClass("page-hovered");
   });
 
