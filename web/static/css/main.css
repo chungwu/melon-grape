@@ -1,8 +1,12 @@
 html,body {
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-family: Georgia, serif;
+  font-size: 17px;
   margin: 0;
   padding: 0;
+}
+
+p {
+  line-height: 1.4;
 }
 
 body {
@@ -189,7 +193,7 @@ img.crane {
 
 .page-title {
   font-size: 40px;
-  font-family: "Coustard", "Courier New", serif;
+  font-family: "Georgia", "Courier New", serif;
   text-align: left;
 }
 
@@ -197,7 +201,7 @@ img.crane {
   color: #000;
   text-decoration: none;
   font-size: 16px;
-  font-family: "Coustard", "Courier New", serif;
+  font-family: "Georgia", "Courier New", serif;
   display: inline-block;
   text-align: center;
   vertical-align: middle;
