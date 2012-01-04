@@ -44,9 +44,12 @@ function onHistoryChanged(opt_hash) {
 }
 
 function openPage($page) {
-  $(".page-opened").removeClass("page-opened").addClass("page-closed");
+  var $toClose = $(".page-opened");
+  $toClose.removeClass("page-opened").addClass("page-closed");
+  $(".page-content", $toClose).slideUp();
   $page.addClass("page-opened").removeClass("page-closed");
   $(".sand-background").css("height", $page.outerHeight() + "px");
+  $(".page-content", $page).slideDown();
 }
 
 function fillStack() {
