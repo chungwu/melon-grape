@@ -1,5 +1,5 @@
 html,body {
-  font-family: Georgia, serif;
+  font-family: Coustard, serif;
   font-size: 17px;
   margin: 0;
   padding: 0;
@@ -64,7 +64,7 @@ img.crane {
   position: absolute;
 }
 .header .sun {
-  left: 300px; 
+  left: 200px; 
   top: -15px;
 }
 .header .sun-start {
@@ -131,6 +131,11 @@ img.crane {
 .header .cloud2 {
   top: 10px;
   left: 500px;
+}
+
+.header .board {
+  left: 240px; 
+  top: 20px;
 }
 
 /* Pages */
@@ -224,8 +229,6 @@ img.crane {
 }
 
 .page-header-container {
-  -webkit-perspective: 1000;
-  -moz-perspective: 1000px;
 }
 
 .page-header {
