@@ -48,7 +48,7 @@ function openPage($page) {
   $toClose.removeClass("page-opened").addClass("page-closed");
   $(".page-content", $toClose).slideUp();
   $page.addClass("page-opened").removeClass("page-closed");
-  $(".sand-background").css("height", $page.outerHeight() + "px");
+  //$(".sand-background").css("height", $page.outerHeight() + "px");
   $(".page-content", $page).slideDown();
 }
 
@@ -65,7 +65,7 @@ function fillStack() {
     "images/paper7b.jpg"
   ];
   var lastTop = 0;
-  for (var i = 0; i < 50; i++) {
+  for (var i = 0; i < 10; i++) {
     var $page = $("<div/>").addClass("page page-closed").css(
       {
 	top: lastTop - 5 + Math.random() * 10 + "px",

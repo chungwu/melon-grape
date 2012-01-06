@@ -1,6 +1,6 @@
 html,body {
   font-family: Coustard, serif;
-  font-size: 17px;
+  font-size: 15px;
   margin: 0;
   padding: 0;
   color: #333;
@@ -28,10 +28,11 @@ body {
 .sand-background {
   background-image: url('../images/sand.jpg');
   background-repeat: repeat;
-  height: 1000px;
+  height: 800px;
   position: absolute;
   width: 940px;
   padding-bottom: 30px;
+  z-index: -1;
 }
 
 h1, h2 {
@@ -138,6 +139,11 @@ img.crane {
   top: 20px;
 }
 
+.header .trunks {
+  left: 774px; 
+  top: 27px;
+}
+
 /* Pages */
 .pages-container {
   width: 940px;
@@ -169,7 +175,7 @@ img.crane {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   z-index: -1;
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .page-home .page-header-bg { background-image: url('../images/paper1b.jpg'); background-position: 0px -710px;}
@@ -237,10 +243,6 @@ img.crane {
   -moz-box-shadow: 2px 2px 8px #222;
   padding: 35px;
   z-index: 10;
-  -webkit-transform: rotate3d(1, 0, 0, 5deg);
-  -webkit-transform-origin: 0 0;
-  -moz-transform: rotate3d(1, 0, 0, 5deg);
-  -moz-transform-origin: 0 0;
 }
 
 .page-content-container {
