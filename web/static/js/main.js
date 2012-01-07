@@ -1,10 +1,11 @@
-function animateCycle(selector, duration, startCss, endCss) {
+function animateCycle(selector, duration, startCss, endCss, opt_easing) {
+  var easing = opt_easing;
   var $prop = $(selector);
   function toStart() {
-    $prop.animate(startCss, {duration:duration, complete:toEnd});
+    $prop.animate(startCss, {duration:duration, complete:toEnd, easing:easing});
   }
   function toEnd() {
-    $prop.animate(endCss, {duration:duration, complete:toStart});
+    $prop.animate(endCss, {duration:duration, complete:toStart, easing:easing});
   }
   toEnd();
 }
