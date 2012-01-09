@@ -327,11 +327,13 @@ h3 {
   display: block;
   width: 450px;
   padding: 10px;
+  border: 1px solid #ccc;
 }
 
 .ss-item textarea {
   padding: 10px;
   width: 450px;
+  border: 1px solid #ccc;
 }
 
 .ss-navigate input {
