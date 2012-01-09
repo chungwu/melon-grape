@@ -375,7 +375,10 @@ h3 {
   padding: 10px;
   box-shadow: 2px 2px 8px #222;
   -moz-box-shadow: 2px 2px 8px #222;  
-  background-image: -webkit-linear-gradient(top,#fff,#ddd);
+  background-image: -webkit-linear-gradient(top,#fff,#eee);
+  background-image: -moz-linear-gradient(top,#fff, #eee);
+  background-image: linear-gradient(top,#fff,#eee);
+  background-image: -ms-linear-gradient(top,#fff,#eee);
 }
 
 .polaroid.left {
