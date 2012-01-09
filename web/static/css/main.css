@@ -1,5 +1,5 @@
 html,body {
-  font-family: Coustard, serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 15px;
   margin: 0;
   padding: 0;
@@ -274,4 +274,41 @@ h3 {
 
 .stack .page-content {
   min-height: 100px;
+}
+
+.notice {
+  border: 1px solid #F0C36D;
+  text-align: center;
+  background-color: #f9edbe;
+  padding: 25px;
+  margin: 25px;
+}
+
+.ss-item .ss-required-asterisk {
+  color: #b00404;
+}
+
+.ss-item .ss-choices {
+  list-style: none;
+}
+
+.ss-item .ss-q-short {
+  display: block;
+  width: 300px;
+  padding: 10px;
+}
+
+.ss-item textarea {
+  padding: 10px;
+}
+
+.ss-navigate input {
+  border: 1px solid #3079ed;
+  padding: 15px;
+  font-weight: bold;
+  background-color: #4d90fe;
+  color: white;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
 }
