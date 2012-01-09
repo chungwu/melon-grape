@@ -4,6 +4,7 @@ html,body {
   margin: 0;
   padding: 0;
   color: #333;
+  padding-bottom: 100px;
 }
 
 a {
@@ -232,6 +233,7 @@ img.crane {
   top: 10px;
   left: 100px;
   z-index: 0;
+  margin-bottom: 100px;
 }
 
 .page-title {
@@ -366,4 +368,22 @@ h3 {
 .welcome-header .datetime {
   margin-top: 35px;
   font-size: 24px;
+}
+
+.polaroid {
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 2px 2px 8px #222;
+  -moz-box-shadow: 2px 2px 8px #222;  
+  background-image: -webkit-linear-gradient(top,#fff,#ddd);
+}
+
+.polaroid.left {
+  float: left;
+  margin: 0 20px 10px -45px;
+}
+
+.polaroid.right {
+  float: right;
+  margin: 0 -45px 10px 20px;
 }
