@@ -325,12 +325,13 @@ h3 {
 
 .ss-item .ss-q-short {
   display: block;
-  width: 300px;
+  width: 450px;
   padding: 10px;
 }
 
 .ss-item textarea {
   padding: 10px;
+  width: 450px;
 }
 
 .ss-navigate input {
@@ -379,6 +380,7 @@ h3 {
   background-image: -moz-linear-gradient(top,#fff, #eee);
   background-image: linear-gradient(top,#fff,#eee);
   background-image: -ms-linear-gradient(top,#fff,#eee);
+  display: inline-block; 
 }
 
 .polaroid.left {
