@@ -1,9 +1,18 @@
 html,body {
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   margin: 0;
   padding: 0;
   color: #333;
+}
+
+a {
+  color: #1d4391;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 p { 
@@ -234,6 +243,10 @@ img.crane {
   padding: 25px;
 }
 
+.page-title-tag:hover {
+  text-decoration: none;
+}
+
 .page-header-container {
 }
 
@@ -282,6 +295,7 @@ h3 {
   background-color: #f9edbe;
   padding: 25px;
   margin: 25px;
+  margin-top: 0;
 }
 
 .ss-item .ss-required-asterisk {
@@ -311,4 +325,30 @@ h3 {
   border-radius: 2px;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
+}
+
+.welcome-header {
+  text-align: center;
+  font-family: "Leckerli One";
+  font-size: 24px;
+}
+
+.welcome-header img {
+  float: left; 
+}
+
+.welcome-header .title {
+  padding-top: 25px;
+  font-size: 52px;
+  color: #b00404;
+}
+
+.welcome-header .blurb {
+  margin-top: 10px;
+  color: #b00404;
+}
+
+.welcome-header .datetime {
+  margin-top: 35px;
+  font-size: 24px;
 }
