@@ -50,7 +50,7 @@ function Crane() {
     if (self.hoverTimeoutId) {
       clearTimeout(self.hoverTimeoutId);
     }
-    self.hoverTimeoutId = setTimeout(function() { self.setEmotion(crane.EMOTION_NORMAL); }, 1000);
+    self.hoverTimeoutId = setTimeout(function() { self.setEmotion(crane.EMOTION_NORMAL); }, 500);
   }
   this.hoverable.mouseenter(onMouseOver).mouseleave(onMouseOut);
 }
@@ -101,13 +101,11 @@ Crane.prototype.setNewGoal = function(opt_x, opt_y) {
 };
 
 Crane.prototype.setEmotion = function(emotion) {
-  //var oldState = this.emotionState;
+  var oldState = this.emotionState;
   this.emotionState = emotion;
-  /*
   if (this.animating && oldState != this.emotionState) {
     this._animateFrame();
   }
-  */
 };
 
 Crane.prototype.animate = function(opt_on) {
@@ -118,22 +116,26 @@ Crane.prototype.animate = function(opt_on) {
     if (animating) {
       this._animateFrame();
     } else {
-      this.hoverable.clearQueue();
+      if (this.timeoutId) {
+        clearTimeout(this.timeoutId);
+      }
     }
   }
 };
 
 Crane.prototype._animateFrame = function() {
-  this.hoverable.clearQueue();
+  if (this.timeoutId) {
+    clearTimeout(this.timeoutId);
+  }
   if (this.animating) {
     var self = this;
     function frame() { self._animateFrame(); }
     if (this.emotionState == crane.EMOTION_NORMAL) {
       this.update(400);
-      this.hoverable.delay(1000).queue(frame);
+      this.timeoutId = setTimeout(frame, 1000);
     } else {
       this.update(50);
-      this.hoverable.delay(200).queue(frame);
+      this.timeoutId = setTimeout(frame, 200);
     }
   }
 };
