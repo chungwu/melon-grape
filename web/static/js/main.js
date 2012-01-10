@@ -47,10 +47,15 @@ function onHistoryChanged(opt_hash) {
 function openPage($page) {
   var $toClose = $(".page-opened");
   $toClose.removeClass("page-opened").addClass("page-closed");
-  $(".page-content", $toClose).slideUp();
-  $page.addClass("page-opened").removeClass("page-closed");
-  //$(".sand-background").css("height", $page.outerHeight() + "px");
-  $(".page-content", $page).slideDown();
+  $(".page-content", $toClose).hide();
+  $page.addClass("page-opened").removeClass("page-closed").clearQueue().delay(0).queue(function() {
+    $(".page-content", $page).slideDown(function() {
+      $(".delay-load.not-loaded", $page).each(function() {
+        $(this).html($(this).comments().html());
+        $(this).removeClass("not-loaded");
+      });
+    });
+  });
 }
 
 function fillStack() {
