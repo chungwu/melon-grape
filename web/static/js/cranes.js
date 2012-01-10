@@ -24,8 +24,14 @@ function Crane() {
   this.goalX = -1;
   this.goalY = -1;
   this.hoverable = $("<div/>").addClass("crane-hoverable").appendTo($("body"));
-  this.curImage = $("<img/>").addClass("crane").appendTo($("body"));
-  this.lastImage = $("<img/>").addClass("crane").appendTo($("body"));
+  this.images = [];
+  for (var i = 0; i < 4; i++) {
+    var wings = [];
+    this.images.push(wings);
+    for (var j = 0; j < 2; j++) {
+      wings.push($("<img/>").prop("src", crane.images[i][j]).addClass("crane").appendTo($("body")));
+    }
+  }
   this.setNewGoal();
   this.curX = this.goalX;
   this.curY = this.goalY;
@@ -49,39 +55,24 @@ function Crane() {
   this.hoverable.mouseenter(onMouseOver).mouseleave(onMouseOut);
 }
 
-crane.throttled = function(delayMs, funcs) {
-  var lastCall;
-  var newFuncs = [];
-  function createFunc(index) {
-    return function() {
-      var now = new Date().getTime();
-      if (!lastCall || now > lastCall + delayMs) {
-	funcs[index]();
-	lastCall = now;
-      };
-    };
-  }
-  for (var i = 0; i < funcs.length; i++) {
-    newFuncs.push(createFunc(i));
-  }
-  return newFuncs;
-};
-
 Crane.prototype.update = function(speed) {
   if (this._shouldSetNewGoal()) {
     this.setNewGoal();
   }
+
+  var lastImage = this.images[this.wingState][this.faceState];
+  lastImage.clearQueue().show().css("opacity", 1).fadeOut(speed);
+
   this.faceState = (this.goalX > this.curX) ? crane.RIGHT : crane.LEFT;
   this.wingState = (this.wingState + 1) % 4;
   this.curX += (this.goalX > this.curX) ? crane.DISTANCE : -crane.DISTANCE;
   this.curY += (this.goalY > this.curY) ? crane.DISTANCE : -crane.DISTANCE;
-  this.lastImage.fadeOut(speed);
-  this.curImage.prop("src", crane.images[this.wingState][this.faceState]);
-  this.curImage.css("top", this.curY + "px").css("left", this.curX + "px").stop(true).fadeIn(speed);
+
+  var curImage = this.images[this.wingState][this.faceState];
+  curImage.css("top", this.curY + "px").css("left", this.curX + "px");
+  curImage.clearQueue().hide().fadeIn(speed);
+
   this.hoverable.css("top", this.curY + "px").css("left", this.curX + "px");
-  var tmp = this.curImage;
-  this.curImage = this.lastImage;
-  this.lastImage = tmp;
 };
 
 Crane.prototype._shouldSetNewGoal = function() {
@@ -110,11 +101,13 @@ Crane.prototype.setNewGoal = function(opt_x, opt_y) {
 };
 
 Crane.prototype.setEmotion = function(emotion) {
-  var oldState = this.emotionState;
+  //var oldState = this.emotionState;
   this.emotionState = emotion;
+  /*
   if (this.animating && oldState != this.emotionState) {
     this._animateFrame();
   }
+  */
 };
 
 Crane.prototype.animate = function() {
@@ -123,18 +116,16 @@ Crane.prototype.animate = function() {
 };
 
 Crane.prototype._animateFrame = function() {
-  if (this.timeoutId) {
-    clearTimeout(this.timeoutId);
-  }
+  this.hoverable.clearQueue();
   if (this.animating) {
     var self = this;
-    function frame() { self._animateFrame();}
+    function frame() { self._animateFrame(); }
     if (this.emotionState == crane.EMOTION_NORMAL) {
       this.update(400);
-      this.timeoutId = setTimeout(frame, 1000);
+      this.hoverable.delay(1000).queue(frame);
     } else {
       this.update(50);
-      this.timeoutId = setTimeout(frame, 200);
+      this.hoverable.delay(200).queue(frame);
     }
   }
 };
