@@ -342,13 +342,20 @@ No</label></li>
 $(function() {
   $.history.init(onHistoryChanged);
 
-  var cr1 = new Crane();
-  cr1.animate();
+  var cranes = [new Crane()];
 
-  /*
-  var cr2 = new Crane();
-  cr2.animate();
-  */
+  function animateCranes(on) {
+    for (var i = 0; i < cranes.length; i++) {
+      cranes[i].animate(on);
+    }
+  }
+  $(window).focus(function() {
+    animateCranes(true);
+  });
+  $(window).blur(function() {
+    animateCranes(false);
+  });
+  animateCranes(true);
 
   $(".page-title-tag").mouseenter(function() {
     $(this).parents(".page").addClass("page-hovered");

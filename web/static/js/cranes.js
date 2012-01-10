@@ -110,9 +110,17 @@ Crane.prototype.setEmotion = function(emotion) {
   */
 };
 
-Crane.prototype.animate = function() {
-  this.animating = true;
-  this._animateFrame();
+Crane.prototype.animate = function(opt_on) {
+  var oldState = this.animating;
+  var animating = opt_on == undefined ? true : opt_on;
+  this.animating = animating;
+  if (oldState != animating) {
+    if (animating) {
+      this._animateFrame();
+    } else {
+      this.hoverable.clearQueue();
+    }
+  }
 };
 
 Crane.prototype._animateFrame = function() {
