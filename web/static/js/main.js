@@ -84,3 +84,7 @@ function fillStack() {
     lastTop += 25;
   }
 }
+
+function isMobile() {
+  return navigator.userAgent.indexOf("Mobile") >= 0;
+}

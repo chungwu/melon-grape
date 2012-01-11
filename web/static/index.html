@@ -9,6 +9,7 @@
 <script type="text/javascript" src="js/jquery.comments.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/cranes.js"></script>
+<script type="text/javascript" src="js/modernizr.js"></script>
 <link href="https://plus.google.com/108452518402527174658" rel="publisher" /><script type="text/javascript">
 (function() 
 {var po = document.createElement("script");
@@ -342,20 +343,22 @@ No</label></li>
 $(function() {
   $.history.init(onHistoryChanged);
 
-  var cranes = [new Crane()];
-
-  function animateCranes(on) {
-    for (var i = 0; i < cranes.length; i++) {
-      cranes[i].animate(on);
+  if (Modernizr.opacity && !isMobile()) {
+    var cranes = [new Crane()];
+  
+    function animateCranes(on) {
+      for (var i = 0; i < cranes.length; i++) {
+        cranes[i].animate(on);
+      }
     }
-  }
-  $(window).focus(function() {
+    $(window).focus(function() {
+      animateCranes(true);
+    });
+    $(window).blur(function() {
+      animateCranes(false);
+    });
     animateCranes(true);
-  });
-  $(window).blur(function() {
-    animateCranes(false);
-  });
-  animateCranes(true);
+  }
 
   $(".page-title-tag").mouseenter(function() {
     $(this).parents(".page").addClass("page-hovered");
@@ -365,14 +368,17 @@ $(function() {
 
   fillStack();
 
-  animateCycle(".header .cloud1", 200000, {left: "0px"}, {left: "800px"}, "linear");
-  animateCycle(".header .cloud2", 200000, {left: "800px"}, {left: "0px"}, "linear");
-  animateClasses(".header .sun", 10000, "sun-start", "sun-end");
-  animateClasses(".header .wave", 10000, "wave-start", "wave-end");
-  animateClasses(".header .leaf1", 4000, "leaf-start", "leaf-end");
-  animateClasses(".header .leaf2", 5000, "leaf-end", "leaf-start");
-  animateClasses(".header .leaf3", 8000, "leaf-start", "leaf-end");
-
+  if (!isMobile()) {
+    animateCycle(".header .cloud1", 200000, {left: "0px"}, {left: "800px"}, "linear");
+    animateCycle(".header .cloud2", 200000, {left: "800px"}, {left: "0px"}, "linear");
+    if (Modernizr.cssanimations) {
+      animateClasses(".header .sun", 10000, "sun-start", "sun-end");
+      animateClasses(".header .wave", 10000, "wave-start", "wave-end");
+      animateClasses(".header .leaf1", 4000, "leaf-start", "leaf-end");
+      animateClasses(".header .leaf2", 5000, "leaf-end", "leaf-start");
+      animateClasses(".header .leaf3", 8000, "leaf-start", "leaf-end");
+    }
+  }
 });
 </script>
 
