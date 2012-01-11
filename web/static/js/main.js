@@ -51,7 +51,7 @@ function openPage($page) {
   $page.addClass("page-opened").removeClass("page-closed").clearQueue().delay(0).queue(function() {
     $(".page-content", $page).slideDown(function() {
       $(".delay-load.not-loaded", $page).each(function() {
-        $(this).html($(this).comments().html());
+        $(this).html($(this).comments().join(""));
         $(this).removeClass("not-loaded");
       });
     });
@@ -87,4 +87,36 @@ function fillStack() {
 
 function isMobile() {
   return navigator.userAgent.indexOf("Mobile") >= 0;
+}
+
+function generateStack($container, images, opt_title, opt_firstSrc) {
+  $container.addClass("polaroid-stack");
+  var firstSrc = opt_firstSrc || images[0][0];
+  var $img = $("<img/>").attr("src", firstSrc);
+  var $first = $("<div class='polaroid stack-first'/>").appendTo($container);
+  $("<div class='stack-mask'/>").appendTo($first);
+  $("<div class='stack-play'/>").appendTo($first);
+  $first.append($img);
+  $container.mouseenter(function() {
+    $(".stack-mask", $first).addClass("stack-mask-hover");
+  }).mouseleave(function() {
+    $(".stack-mask", $first).removeClass("stack-mask-hover");
+  });
+  if (opt_title) {
+    $("<div class='stack-title'/>").text(opt_title).appendTo($first);
+  }
+  $img.load(function() {
+    var width = $first.width();
+    var height = $first.height();
+    for (var i = 0; i < 3; i++) {
+      var $pol = $("<div class='polaroid'/>").css({width: width, height: height}).appendTo($container);
+      $pol.css("top", Math.random() * 30 - 15 + "px");
+      $pol.css("left", Math.random() * 30 - 15 + "px");
+    }
+  });
+  $container.click(function() {
+    $.slimbox(images, 0, {
+      resizeDuration: 0, captionAnimationDuration: 0, counterText: false, imageFadeDuration: 0
+    });
+  });
 }

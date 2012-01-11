@@ -6,7 +6,7 @@
  
 jQuery.fn.comments = function( blnDeep ){
 	var blnDeep = (blnDeep || false);
-	var jComments = $( [] );
+	var jComments = [];
  
 	// Loop over each node to search its children for
 	// comment nodes and element nodes (if deep search).
@@ -25,11 +25,7 @@ jQuery.fn.comments = function( blnDeep ){
 					// We found a comment node. Add it to
 					// the nodes collection wrapped in a
 					// DIV (as we may have HTML).
-					jComments = jComments.add(
-						"<div rel='" + strParentID + "'>" +
-						objChildNode.nodeValue +
-						"</div>"
-						);
+				  jComments.push(objChildNode.nodeValue);
  
 				} else if (
 					blnDeep &&
@@ -37,7 +33,7 @@ jQuery.fn.comments = function( blnDeep ){
 					) {
  
 					// Traverse this node deeply.
-					jComments = jComments.add(
+					jComments = jComments.concat(
 						$( objChildNode ).comments( true )
 						);
  

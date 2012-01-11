@@ -395,3 +395,51 @@ h3 {
   float: right;
   margin: 0 -45px 10px 20px;
 }
+
+.polaroid .caption {
+  font-weight: bold;
+  padding: 10px;
+}
+
+.polaroid-stack {
+  cursor: pointer;
+  position: relative;
+  display: inline-block; 
+  margin: 15px;
+}
+
+.polaroid-stack .polaroid {
+  position: absolute;
+  z-index: 0;
+}
+
+.polaroid-stack .stack-first {
+  position: relative;
+  z-index: 1;
+}
+
+.polaroid-stack .stack-mask {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  background-color: white; 
+  opacity: 0.65;
+}
+
+.polaroid-stack .stack-mask-hover {
+  opacity: 0.3;
+}
+
+.polaroid-stack .stack-play {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  background-image: url('../images/play.png');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.polaroid-stack .stack-title {
+  position: absolute;
+  top: 20px; right: 20px;
+  font-size: 24px;
+  font-family: "Coustard", "Courier New", serif;
+}
