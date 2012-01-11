@@ -48,7 +48,8 @@ function openPage($page) {
   var $toClose = $(".page-opened");
   $toClose.removeClass("page-opened").addClass("page-closed");
   $(".page-content", $toClose).hide();
-  $page.addClass("page-opened").removeClass("page-closed").clearQueue().delay(0).queue(function() {
+  var delay = isMobile() ? 600 : 0;
+  $page.addClass("page-opened").removeClass("page-closed").clearQueue().delay(delay).queue(function() {
     $(".page-content", $page).slideDown(function() {
       $(".delay-load.not-loaded", $page).each(function() {
         $(this).html($(this).comments().join(""));
