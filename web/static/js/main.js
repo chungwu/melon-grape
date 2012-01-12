@@ -115,8 +115,17 @@ function generateStack($container, images, opt_title, opt_firstSrc) {
       $pol.css("left", Math.random() * 30 - 15 + "px");
     }
   });
+  var wrappedImages = [];
+  for (var i = 0; i < images.length; i++) {
+    if (typeof(images[i]) == "string") {
+      wrappedImages.push([images[i]]);
+    } else {
+      wrappedImages.push(images[i]);
+    }
+  }
+
   $container.click(function() {
-    $.slimbox(images, 0, {
+    $.slimbox(wrappedImages, 0, {
       resizeDuration: 0, captionAnimationDuration: 0, counterText: false, imageFadeDuration: 0
     });
   });
