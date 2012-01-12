@@ -99,9 +99,9 @@ function generateStack($container, images, opt_title, opt_firstSrc) {
   $("<div class='stack-play'/>").appendTo($first);
   $first.append($img);
   $container.mouseenter(function() {
-    $(".stack-mask", $first).addClass("stack-mask-hover");
+    $container.addClass("polaroid-stack-hover");
   }).mouseleave(function() {
-    $(".stack-mask", $first).removeClass("stack-mask-hover");
+    $container.removeClass("polaroid-stack-hover");
   });
   if (opt_title) {
     $("<div class='stack-title'/>").text(opt_title).appendTo($first);

@@ -436,7 +436,7 @@ h3 {
   -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(opacity=65)";
 }
 
-.polaroid-stack .stack-mask-hover {
+.polaroid-stack-hover .stack-mask {
   opacity: 0.3;
   filter: alpha(opacity=30);
   -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(opacity=30)";
@@ -448,6 +448,15 @@ h3 {
   background-image: url('../images/play.png');
   background-position: center;
   background-repeat: no-repeat;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(opacity=60)";
+}
+
+.polaroid-stack-hover .stack-play {
+  opacity: .9;
+  filter: alpha(opacity=90);
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(opacity=90)";
 }
 
 .polaroid-stack .stack-title {
