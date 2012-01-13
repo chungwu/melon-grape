@@ -23,6 +23,12 @@ h3:first-child {
   margin-top: 0;
 }
 
+h4 {
+  font-family: "Leckerli One";
+  font-weight: normal;
+  margin-top: 0;
+}
+
 a:hover {
   text-decoration: underline;
 }
@@ -464,4 +470,31 @@ h3 {
   top: 20px; right: 20px;
   font-size: 24px;
   font-family: "Coustard", "Courier New", serif;
+}
+
+h3.bio-name {
+  font-size: 32px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+h4.bio-title {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 10px;;
+}
+
+.bio-blurb {
+  clear: both;
+}
+
+.bio-content {
+ 
+}
+
+hr.bio-separator {
+  border: none;
+  margin: 35px 15px;
+  border-bottom: 1px solid #ccc;
+  clear: both;
 }
