@@ -213,13 +213,13 @@ img.crane {
   -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(opacity=70)";
 }
 
-.page-home .page-header-bg { background-image: url('../images/paper1b.jpg'); background-position: 0px -710px;}
-.page-settings .page-header-bg { background-image: url('../images/paper3.jpg'); background-position: 0px -550px;}
-.page-plot .page-header-bg { background-image: url('../images/paper4.jpg'); background-position: 0px -1000px;}
-.page-cast .page-header-bg { background-image: url('../images/paper5.jpg'); background-position: 0px 0px;}
-.page-trailer .page-header-bg { background-image: url('../images/paper6.jpg'); background-position: 0px -200px;}
-.page-rsvp .page-header-bg { background-image: url('../images/paper7b.jpg'); background-position: 0px -630px;}
-.page-extras .page-header-bg { background-image: url('../images/paper2.jpg'); background-position: 0px -280px;}
+.page-home .page-header-bg { background-image: url('../images/paper1c.jpg'); background-position: 0px -710px;}
+.page-settings .page-header-bg { background-image: url('../images/paper3c.jpg'); background-position: 0px -550px;}
+.page-plot .page-header-bg { background-image: url('../images/paper4c.jpg'); background-position: 0px -1000px;}
+.page-cast .page-header-bg { background-image: url('../images/paper5c.jpg'); background-position: 0px 0px;}
+.page-trailer .page-header-bg { background-image: url('../images/paper6c.jpg'); background-position: 0px -200px;}
+.page-rsvp .page-header-bg { background-image: url('../images/paper7c.jpg'); background-position: 0px -630px;}
+.page-extras .page-header-bg { background-image: url('../images/paper2c.jpg'); background-position: 0px -280px;}
 
 .page-closed.page-home { top: -50px; left:-775px;}
 .page-closed.page-settings { top: 0px; left:-763px;}
@@ -258,7 +258,7 @@ img.crane {
 .page-title-tag {
   color: #111;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 14px;
   font-family: "Coustard", "Courier New", serif;
   display: inline-block;
   text-align: center;

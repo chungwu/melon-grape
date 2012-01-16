@@ -63,13 +63,13 @@ function fillStack() {
   var $stack = $(".stack");
   $stack.css("top", $(".page").last().position().top + 50 + "px");
   var images = [
-    "images/paper1b.jpg",
-    "images/paper2.jpg",
-    "images/paper3.jpg",
-    "images/paper4.jpg",
-    "images/paper5.jpg",
-    "images/paper6.jpg",
-    "images/paper7b.jpg"
+    "images/paper1c.jpg",
+    "images/paper2c.jpg",
+    "images/paper3c.jpg",
+    "images/paper4c.jpg",
+    "images/paper5c.jpg",
+    "images/paper6c.jpg",
+    "images/paper7c.jpg"
   ];
   var lastTop = 0;
   for (var i = 0; i < 10; i++) {
