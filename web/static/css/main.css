@@ -498,3 +498,19 @@ hr.bio-separator {
   border-bottom: 1px solid #ccc;
   clear: both;
 }
+
+.bio-lazy {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.bio-lazy .bio-blurb {
+  display: inline-block;
+  text-align: center;
+  margin-right: 25px;
+}
+
+.bio-lazy h3.bio-name {
+  font-size: 20px;
+  margin-top: 10px;
+}
