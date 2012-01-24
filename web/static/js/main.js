@@ -42,6 +42,7 @@ function animateClasses(selector, duration, startClass, endClass) {
 function onHistoryChanged(opt_hash) {
   var hash = opt_hash || "home";
   openPage($(".page-" + hash));
+  _gaq.push(['_trackPageview', '/' + hash]);
 }
 
 function openPage($page) {
@@ -128,5 +129,6 @@ function generateStack($container, images, opt_title, opt_firstSrc) {
     $.slimbox(wrappedImages, 0, {
       resizeDuration: 0, captionAnimationDuration: 0, counterText: false, imageFadeDuration: 0
     });
+    _gaq.push(["_trackEvent", "Slideshows", "Play", opt_title]);
   });
 }
