@@ -29,7 +29,7 @@ function Crane() {
     var wings = [];
     this.images.push(wings);
     for (var j = 0; j < 2; j++) {
-      wings.push($("<img/>").prop("src", crane.images[i][j]).addClass("crane").appendTo($("body")));
+      wings.push($("<img/>").prop("src", crane.images[i][j]).addClass("crane").hide().appendTo($("body")));
     }
   }
   this.setNewGoal();

@@ -106,7 +106,7 @@ function fillStack() {
 }
 
 function isMobile() {
-  return navigator.userAgent.indexOf("Mobile") >= 0 && navigator.userAgent.indexOf("iPad") < 0;
+  return navigator.userAgent.indexOf("Mobi") >= 0 && navigator.userAgent.indexOf("iPad") < 0;
 }
 
 function generateStack($container, images, opt_title, opt_firstSrc) {
