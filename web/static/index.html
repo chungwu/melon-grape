@@ -12,7 +12,7 @@
 <script type="text/javascript" src="js/jquery.comments.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/cranes.js"></script>
-<script type="text/javascript" src="js/modernizr.js"></script>
+<script type="text/javascript" src="js/modernizr.min.js"></script>
 <script type="text/javascript" src="js/slimbox2.js"></script>
 <!--[if IE]>
 <style type="text/css">
@@ -162,7 +162,7 @@ s.parentNode.insertBefore(po, s);
 	  The closest airport to our wedding location is the <a href="http://maps.google.com/maps/place?cid=12328814041328736567">Kona International Airport (KOA)</a>.  It is about a 30-minute drive from most hotels and about an hour from the reception venue.
 	</p>
 	<p>
-	  For our guests, we have a <strong>special 7% discount from Alaska Airlines</strong> for traveling to Kona!  Simply use this coupon code while booking: <strong>ECMG535</strong>.  This code is only valid for travel between 6/3/2012 and 6/17/2012.  Alaska Airlines is a great choice because it has competitive rates, and has direct flights between Kona and San Jose, Oakland and Seattle.
+	  For our guests, we have a <strong>special 7% discount from Alaska Airlines</strong> for traveling to Kona!  Simply use this coupon code while booking: <strong>ECMG535</strong>.  This code is only valid for travel between 6/3/2012 and 6/17/2012.  Alaska Airlines is a great choice because it has competitive rates, and has direct flights between Kona and San Jose, Oakland and Seattle.  If you use the discount code, <strong>please email your flight information to Chung!</strong>
 	</p>
 
 	<h3>Dress Code</h3>
@@ -589,11 +589,13 @@ $(function() {
     animateCranes(true);
   }
 
-  $(".page-title-tag").mouseenter(function() {
-    $(this).parents(".page").addClass("page-hovered");
-  }).mouseleave(function() {
-    $(this).parents(".page").removeClass("page-hovered");
-  });
+  if (!isMobile()) {
+    $(".page-title-tag").mouseenter(function() {
+      $(this).parents(".page").addClass("page-hovered");
+    }).mouseleave(function() {
+      $(this).parents(".page").removeClass("page-hovered");
+    });
+  }
 
   fillStack();
 
