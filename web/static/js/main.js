@@ -67,14 +67,16 @@ function openPage($page) {
       $(this).removeClass("not-loaded");
     });
   }
-  $page.addClass("page-opened").removeClass("page-closed");
+  var $content = $(".page-content", $page);
   if (isMobile()) {
+    $page.addClass("page-opened").removeClass("page-closed");
     $page.clearQueue().delay(600).queue(function() {
-      $(".page-content", $page).show();
+      $content.show();
       render();
     });
   } else {
-    $(".page-content", $page).slideDown(render);
+    $page.addClass("page-opened").removeClass("page-closed");
+    $content.slideDown(render);
   }
 }
 
