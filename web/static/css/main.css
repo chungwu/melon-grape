@@ -189,14 +189,10 @@ img.crane {
   position: absolute;
   padding: 0;
   background-color: #eee;
-  -webkit-transform-origin: 100% 0;
-  -moz-transform-origin: 100% 0;
   z-index: 2;
 }
 
 .page-closed {
-  -webkit-transition-duration: 0.5s;
-  -moz-transition-duration: 0.5s;
   box-shadow: -1px -1px 4px #333;
   -moz-box-shadow: -1px -1px 4px #333;
   -webkit-box-shadow: -1px -1px 4px #333;
@@ -234,10 +230,6 @@ img.crane {
 }
 
 .page-opened {
-  -webkit-transform: translate(0) rotate(0deg);
-  -moz-transform: translate(0) rotate(0deg);
-  -webkit-transition-duration: 0.5s;
-  -moz-transition-duration: 0.5s;
   box-shadow: 2px 2px 8px #222;
   -moz-box-shadow: 2px 2px 8px #222;
   -webkit-box-shadow: 2px 2px 8px #222;
@@ -513,4 +505,8 @@ hr.bio-separator {
 .bio-lazy h3.bio-name {
   font-size: 20px;
   margin-top: 10px;
+}
+
+.not-mobile {
+  display: none;
 }

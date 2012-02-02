@@ -1,0 +1,13 @@
+.page-openable.page-closed.page-hovered {
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+}
+
+.page-opened, .page-closed {
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+}
+
+.not-mobile {
+  display: block;
+}
