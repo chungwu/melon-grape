@@ -48,20 +48,27 @@ function onHistoryChanged(opt_hash) {
 function openPage($page) {
   var $toClose = $(".page-opened");
   $toClose.removeClass("page-opened").addClass("page-closed");
-  $(".delay-load", $toClose).each(function() {
-    $(this).html("").addClass("not-loaded");
-  });
-  $(".page-content", $toClose).hide();
   var mobile = isMobile();
+  if (mobile) {
+    $(".delay-load", $toClose).each(function() {
+      $(this).html("").addClass("not-loaded");
+    });
+  }
+  $(".page-content", $toClose).hide();
   function render() {
     $(".delay-load.not-loaded", $page).each(function() {
       if (mobile && $(this).hasClass("not-mobile")) {
         return;
       }
-      var html = $(this).data("html");
-      if (!html) {
+      var html;
+      if (mobile) {
+        html = $(this).data("html");
+        if (!html) {
+          html = $(this).comments().join("");
+          $(this).data("html", html);
+        }
+      } else {
         html = $(this).comments().join("");
-        $(this).data("html", html);
       }
       $(this).html(html);
       $(this).removeClass("not-loaded");
