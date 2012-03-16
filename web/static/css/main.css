@@ -443,7 +443,7 @@ h3 {
 }
 
 .welcome-header .title {
-  padding-top: 15px;
+  padding-top: 10px;
   font-size: 52px;
   color: #b00404;
 }
@@ -454,13 +454,13 @@ h3 {
 }
 
 .welcome-header .datetime {
-  margin-top: 30px;
+  margin-top: 20px;
   font-size: 24px;
 }
 
 .welcome-header .details {
-  margin-top: 30px;
-  font-size: 24px;
+  margin-top: 20px;
+  font-size: 18px;
 }
 
 .polaroid {
