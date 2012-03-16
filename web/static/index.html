@@ -55,14 +55,14 @@ s.parentNode.insertBefore(po, s);
 
 <div class="header">
   <img src="images/header.png" style="width:940px;height:140px;"/>
-  <div class="prop cloud1"><img src="images/cloud1.png"/></div>
-  <div class="prop cloud2"><img src="images/cloud2.png"/></div>
-  <div class="prop sun"><img src="images/sun.png"/></div>
-  <div class="prop wave"><img src="images/wave.png"/></div>
+  <div class="prop cloud1 animatable"><img src="images/cloud1.png"/></div>
+  <div class="prop cloud2 animatable"><img src="images/cloud2.png"/></div>
+  <div class="prop sun animatable"><img src="images/sun.png"/></div>
+  <div class="prop wave animatable"><img src="images/wave.png"/></div>
   <div class="prop trunks"><img src="images/trees.png"/></div>
-  <div class="prop leaf1"><img src="images/leaf1.png"/></div>
-  <div class="prop leaf2"><img src="images/leaf2.png"/></div>
-  <div class="prop leaf3"><img src="images/leaf3.png"/></div>
+  <div class="prop leaf leaf1 animatable"><img src="images/leaf1.png"/></div>
+  <div class="prop leaf leaf2 animatable"><img src="images/leaf2.png"/></div>
+  <div class="prop leaf leaf3 animatable"><img src="images/leaf3.png"/></div>
   <div class="prop board"><img src="images/board.png"/></div>
 </div>
 
@@ -80,6 +80,10 @@ s.parentNode.insertBefore(po, s);
     </div>
     <div class="page-content-container">
       <div class="page-content">
+        <div class="notice">
+          <h2>Follow our latest updates on our <a href="http://blog.melon-grape.com">blog</a>!</h2>
+        </div>
+
 	<div class="welcome-header">
           <div class="delay-load not-loaded" style="float:left; margin-left:-10px; margin-right: 20px;">
             <!--
@@ -187,7 +191,7 @@ s.parentNode.insertBefore(po, s);
 
 	<h3>Duration of Stay</h3>
 	<p>
-	  Mel &amp; Chung will be arriving on 6/7/2012, and will be super busy preparing for the big event till 6/10/2012.  But after the wedding, they'll be up for hanging out!  Scuba diving, at the very least, is a certainty :-)  They will likely stay in Kona till 6/13, and will fly off to Taiwan after.  They recommend you spending a few days on the east coast of Big Island as well around Hilo, and check out the awesome Volcanoes National Park.  It's wetter, greener, and totally different there!
+	  Mel &amp; Chung will be arriving on 6/7/2012, and will be super busy preparing for the big event till 6/10/2012.  But after the wedding, they'll be up for hanging out!  Scuba diving, at the very least, is a certainty :-)  They will stay in Kona till 6/12, and will fly off to Kauai for a mini-honeymoon after!  They recommend you spending a few days on the east coast of Big Island as well around Hilo, and check out the awesome Volcanoes National Park.  It's wetter, greener, and totally different there!
 	</p>
 
 
@@ -605,15 +609,7 @@ $(function() {
 
   if (!isMobile()) {
     loadCss("css/desk.css");
-    animateCycle(".header .cloud1", 200000, {left: "0px"}, {left: "800px"}, "linear");
-    animateCycle(".header .cloud2", 200000, {left: "800px"}, {left: "0px"}, "linear");
-    if (Modernizr.cssanimations) {
-      animateClasses(".header .sun", 10000, "sun-start", "sun-end");
-      animateClasses(".header .wave", 10000, "wave-start", "wave-end");
-      animateClasses(".header .leaf1", 4000, "leaf-start", "leaf-end");
-      animateClasses(".header .leaf2", 5000, "leaf-end", "leaf-start");
-      animateClasses(".header .leaf3", 8000, "leaf-start", "leaf-end");
-    }
+    $(".animatable").addClass("animated");
   }
 });
 </script>

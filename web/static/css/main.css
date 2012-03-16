@@ -100,70 +100,149 @@ img.crane {
   left: 200px; 
   top: -5px;
 }
-.header .sun-start {
-  -webkit-transform: rotate(-5deg);
-  -webkit-transition-duration: 10s;
-  -moz-transform: rotate(-5deg);
-  -moz-transition-duration: 10s;
+
+@-webkit-keyframes sun-anime {
+  0% { -webkit-transform: rotate(-5deg); }
+  100% { -webkit-transform: rotate(5deg); }
 }
-.header .sun-end {
-  -webkit-transform: rotate(5deg);
-  -webkit-transition-duration: 10s;
-  -moz-transform: rotate(5deg);
-  -moz-transition-duration: 10s;
+
+@-moz-keyframes sun-anime {
+  0% { -moz-transform: rotate(-5deg); }
+  100% { -moz-transform: rotate(5deg); }
 }
+
+.header .sun.animated {
+  -webkit-animation-name: sun-anime;
+  -webkit-animation-duration: 8s;  
+  -moz-animation-name: sun-anime;
+  -moz-animation-duration: 8s;  
+}
+
 .header .wave {
   top: 10px;
   left: 0px;
+}
+
+@-webkit-keyframes wave-anime {
+  0% { -webkit-transform: translate(-5px, -5px) rotate(-8deg); }
+  100% { -webkit-transform: translate(15px, 5px) rotate(5deg); }
+}
+
+@-moz-keyframes wave-anime {
+  0% { -moz-transform: translate(-5px, -5px) rotate(-8deg); }
+  100% { -moz-transform: translate(15px, 5px) rotate(5deg); }
+}
+
+.animated {
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-direction: alternate;
+  -moz-animation-timing-function: ease-in-out;
+}
+
+.header .wave.animated {
   -webkit-transform-origin: 0 100%;
+  -webkit-animation-name: wave-anime;
+  -webkit-animation-duration: 7s;
   -moz-transform-origin: 0 100%;
+  -moz-animation-name: wave-anime;
+  -moz-animation-duration: 7s;
 }
-.header .wave-start {
-  -webkit-transform: translate(-5px, -5px) rotate(-5deg);
-  -webkit-transition-duration: 10s;
-  -moz-transform: translate(-5px, -5px) rotate(-5deg);
-  -moz-transition-duration: 10s;
+
+@-webkit-keyframes leaf-anime {
+  0% { -webkit-transform: rotate(-10deg); }
+  100% { -webkit-transform: rotate(10deg); }
 }
-.header .wave-end {
-  -webkit-transform: translate(15px, 5px) rotate(5deg);
-  -webkit-transition-duration: 10s;
-  -moz-transform: translate(15px, 5px) rotate(5deg);
-  -moz-transition-duration: 10s;
+
+@-moz-keyframes leaf-anime {
+  0% { -moz-transform: rotate(-10deg); }
+  100% { -moz-transform: rotate(10deg); }
 }
+
 .header .leaf1 {
   top: 5px;
   left: 720px;
 }
+
+.header .leaf.animated {
+  -webkit-animation-name: leaf-anime;
+  -moz-animation-name: leaf-anime;
+}
+
+.header .leaf1.animated {
+  -webkit-animation-duration: 5s;
+  -moz-animation-duration: 5s;
+}
+
 .header .leaf2 {
   top: -10px;
   left: 760px;
 }
+
+.header .leaf2.animated {
+  -webkit-animation-duration: 6s;
+  -webkit-animation-fill-mode: backwards;
+  -moz-animation-duration: 6s;
+}
+
 .header .leaf3 {
   top: 10px;
   left: 815px;
 }
 
-.header .leaf-start {
-  -webkit-transform: rotate(-10deg);
-  -webkit-transition-duration: 5s;
-  -moz-transform: rotate(-10deg);
-  -moz-transition-duration: 5s;
-}
-
-.header .leaf-end {
-  -webkit-transform: rotate(10deg);
-  -webkit-transition-duration: 5s;
-  -moz-transform: rotate(10deg);
-  -moz-transition-duration: 5s;
+.header .leaf3.animated {
+  -webkit-animation-duration: 8s;
+  -moz-animation-duration: 8s;
 }
 
 .header .cloud1 {
   top: 10px;
   left: 100px;
 }
+
+@-webkit-keyframes cloud1-anime {
+  0% { left: 100px; }
+  100% { left: 800px; }
+}
+
+@-moz-keyframes cloud1-anime {
+  0% { left: 100px; }
+  100% { left: 800px; }
+}
+
+.header .cloud1.animated {
+  -webkit-animation-name: cloud1-anime;
+  -webkit-animation-duration: 200s;  
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: cloud1-anime;
+  -moz-animation-duration: 200s;  
+  -moz-animation-timing-function: linear;
+}
+
 .header .cloud2 {
   top: 10px;
   left: 700px;
+}
+
+@-webkit-keyframes cloud2-anime {
+  0% { left: 700px; }
+  100% { left: 100px; }
+}
+
+@-moz-keyframes cloud2-anime {
+  0% { left: 700px; }
+  100% { left: 100px; }
+}
+
+.header .cloud2.animated {
+  -webkit-animation-name: cloud2-anime;
+  -webkit-animation-duration: 250s;  
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: cloud2-anime;
+  -moz-animation-duration: 250s;  
+  -moz-animation-timing-function: linear;
 }
 
 .header .board {
