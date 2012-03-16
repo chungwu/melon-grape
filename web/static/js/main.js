@@ -49,40 +49,23 @@ function openPage($page) {
   var $toClose = $(".page-opened");
   $toClose.removeClass("page-opened").addClass("page-closed");
   var mobile = isMobile();
-  if (mobile) {
-    $(".delay-load", $toClose).each(function() {
-      $(this).html("").addClass("not-loaded");
-    });
-  }
   $(".page-content", $toClose).hide();
   function render() {
     $(".delay-load.not-loaded", $page).each(function() {
       if (mobile && $(this).hasClass("not-mobile")) {
         return;
       }
-      var html;
-      if (mobile) {
-        html = $(this).data("html");
-        if (!html) {
-          html = $(this).comments().join("");
-          $(this).data("html", html);
-        }
-      } else {
-        html = $(this).comments().join("");
-      }
+      var html = $(this).comments().join("");
       $(this).html(html);
       $(this).removeClass("not-loaded");
     });
   }
   var $content = $(".page-content", $page);
-  if (isMobile()) {
-    $page.addClass("page-opened").removeClass("page-closed");
-    $page.clearQueue().delay(600).queue(function() {
-      $content.show();
-      render();
-    });
+  $page.addClass("page-opened").removeClass("page-closed");
+  if (mobile) {
+    $content.show();
+    render();
   } else {
-    $page.addClass("page-opened").removeClass("page-closed");
     $content.slideDown(render);
   }
 }
@@ -91,13 +74,13 @@ function fillStack() {
   var $stack = $(".stack");
   $stack.css("top", $(".page").last().position().top + 50 + "px");
   var images = [
-    "images/paper1c.jpg",
-    "images/paper2c.jpg",
-    "images/paper3c.jpg",
-    "images/paper4c.jpg",
-    "images/paper5c.jpg",
-    "images/paper6c.jpg",
-    "images/paper7c.jpg"
+    "images/paper1d.jpg",
+    "images/paper2d.jpg",
+    "images/paper3d.jpg",
+    "images/paper4d.jpg",
+    "images/paper5d.jpg",
+    "images/paper6d.jpg",
+    "images/paper7d.jpg"
   ];
   var lastTop = 0;
   for (var i = 0; i < 10; i++) {
@@ -108,7 +91,7 @@ function fillStack() {
       }).appendTo($stack);
     var $header = $("<div class='page-header'><div class='page-title'>&nbsp;</div></div>").appendTo($page);
     $header.css("backgroundImage", "url('" +  images[Math.floor(Math.random() * images.length)] + "')");
-    $header.css("backgroundPosition", "0px " + Math.random() * -600 + "px");
+    $header.css("backgroundPosition", Math.random() * 600 + "px 0px");
     $("<div class='page-content'/>").appendTo($page);
     lastTop += 25;
   }
