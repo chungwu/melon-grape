@@ -101,7 +101,7 @@ function isMobile() {
   return navigator.userAgent.indexOf("Mobi") >= 0 && navigator.userAgent.indexOf("iPad") < 0;
 }
 
-function generateStack($container, images, opt_title, opt_firstSrc) {
+function generateStack($container, images, opt_title, opt_firstSrc, opt_class) {
   $container.addClass("polaroid-stack");
   var firstSrc = opt_firstSrc || images[0][0];
   var $img = $("<img/>").attr("src", firstSrc);
@@ -137,7 +137,8 @@ function generateStack($container, images, opt_title, opt_firstSrc) {
 
   $container.click(function() {
     $.slimbox(wrappedImages, 0, {
-      resizeDuration: 0, captionAnimationDuration: 0, counterText: false, imageFadeDuration: 0
+      resizeDuration: 0, captionAnimationDuration: 0, counterText: false, imageFadeDuration: 0,
+      optClass: opt_class
     });
     _gaq.push(["_trackEvent", "Slideshows", "Play", opt_title]);
   });

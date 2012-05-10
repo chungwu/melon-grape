@@ -594,3 +594,12 @@ hr.bio-separator {
 .not-mobile {
   display: none;
 }
+
+#lbCaption,#lbNumber {
+  margin-right: 0;
+}
+
+#lbBottomContainer.dresscode-stack #lbCaption {
+  font-size: 12px;
+  line-height: 1.2em;
+}
